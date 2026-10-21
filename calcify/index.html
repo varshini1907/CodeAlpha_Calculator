@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Calcify Pro - A modern scientific calculator">
+  <title>Calcify Pro | Smart Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="app">
+
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">✦</div>
+      <div>
+        <h1>calcify<span>.</span></h1>
+        <small>PRO EDITION</small>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button id="themeBtn" class="icon-btn" title="Toggle theme">☀</button>
+      <button id="historyBtn" class="icon-btn" title="History">◷</button>
+    </div>
+  </header>
+
+  <div class="workspace">
+
+    <main class="calculator">
+
+      <div class="calc-top">
+        <span class="status"><i></i> READY TO CALCULATE</span>
+        <span class="mode-label" id="modeLabel">STANDARD</span>
+      </div>
+
+      <div class="screen">
+        <div id="expression" class="expression"></div>
+        <div id="display" class="display" aria-live="polite">0</div>
+
+        <div class="screen-bottom">
+          <span id="preview" class="preview"></span>
+          <button id="copyBtn" class="copy-btn" title="Copy result">⧉ Copy</button>
+        </div>
+      </div>
+
+      <div class="mode-switch">
+        <button class="mode active" data-mode="standard">Standard</button>
+        <button class="mode" data-mode="scientific">Scientific</button>
+      </div>
+
+      <div class="scientific-keys" id="scientificKeys" hidden>
+        <button data-fn="sin">sin</button>
+        <button data-fn="cos">cos</button>
+        <button data-fn="tan">tan</button>
+        <button data-fn="sqrt">√x</button>
+        <button data-fn="square">x²</button>
+        <button data-fn="inverse">1/x</button>
+        <button data-fn="log">log</button>
+        <button data-fn="ln">ln</button>
+        <button data-fn="pi">π</button>
+        <button data-fn="e">e</button>
+        <button data-fn="abs">|x|</button>
+        <button data-fn="factorial">n!</button>
+      </div>
+
+      <div class="keypad">
+        <button class="utility" data-action="clear">AC</button>
+        <button class="utility" data-action="delete">DEL</button>
+        <button class="utility" data-action="percent">%</button>
+        <button class="operator" data-op="÷">÷</button>
+
+        <button data-num="7">7</button>
+        <button data-num="8">8</button>
+        <button data-num="9">9</button>
+        <button class="operator" data-op="×">×</button>
+
+        <button data-num="4">4</button>
+        <button data-num="5">5</button>
+        <button data-num="6">6</button>
+        <button class="operator" data-op="−">−</button>
+
+        <button data-num="1">1</button>
+        <button data-num="2">2</button>
+        <button data-num="3">3</button>
+        <button class="operator" data-op="+">+</button>
+
+        <button data-action="sign">±</button>
+        <button data-num="0">0</button>
+        <button data-num=".">.</button>
+        <button class="equals" data-action="equals">=</button>
+      </div>
+
+      <div class="calc-footer">
+        <span>✦ Precision meets simplicity</span>
+        <span>v1.0</span>
+      </div>
+    </main>
+
+    <aside class="history-panel" id="historyPanel">
+      <div class="history-header">
+        <div>
+          <h2>History</h2>
+          <p>Your recent calculations</p>
+        </div>
+        <button id="clearHistory" class="clear-history">Clear all</button>
+      </div>
+
+      <div id="historyList" class="history-list">
+        <div class="empty-history">
+          <span>◷</span>
+          <p>No calculations yet</p>
+          <small>Your calculations will appear here.</small>
+        </div>
+      </div>
+
+      <div class="history-footer">
+        Stored locally in your browser
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="page-footer">
+    Designed with ♥ · CALCIFY PRO
+  </footer>
+
+</div>
+
+<div id="toast" class="toast" role="status"></div>
+
+</body>
+</html>
